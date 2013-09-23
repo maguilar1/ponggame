@@ -6,10 +6,13 @@ import jgame.GRootContainer;
 import jgame.Game;
 import jgame.ImageCache;
 
+
 public class Pong extends Game {
 	
 	public enum View{
 		GAME, GAME_OVER;
+		
+	
 	}
 
 	public static void main(String[] args)
@@ -17,6 +20,8 @@ public class Pong extends Game {
 		ImageCache.create(Pong.class, "/pong/rsc/");
 		Pong pongGame = new Pong();
 		pongGame.startGame("Pong");
+		
+		
 	}
 	
 	public Pong()
@@ -30,6 +35,8 @@ public class Pong extends Game {
 	
 	GameOverView gameOverView = new GameOverView();
 	root.addView(View.GAME_OVER, gameOverView);
+	
+	
 	}
 }
 

@@ -7,21 +7,17 @@ import jgame.controller.KeyboardLocationController;
 
 public class PongPaddle extends GSprite {
 
-	public PongPaddle(){
-		/*
-		ImageCache cache = ImageCache.forClass(Pong.class);
-		Image paddle = cache.get("paddle.png");
-		super(paddle);
-		*/
-		super(ImageCache.forClass(Pong.class).get("paddle.png"));
+	public PongPaddle(ControlScheme cs){
 		
-		// Create a keyboard movement controller.
+		super(ImageCache.forClass(Pong.class).get("paddle.png"));
+	
+		
 		KeyboardLocationController klc = new KeyboardLocationController(
-		        ControlScheme.WASD, 10);
+		       cs, 10);
 
-		// Add the new controller.
+		
 		addController(klc);
-		// Disable horizontal movement.
+		
 		klc.setHorizontalAllowed(false);
 	}
 }
